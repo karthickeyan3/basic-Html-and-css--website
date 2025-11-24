@@ -4,39 +4,32 @@
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
 body { 
     background: #f0f2f5;
 }
-
 /* Desktop container max width */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 15px;
 }
-
 header {
     background: #4a90e2;
     color: white;
     padding: 15px;
     text-align: center;
 }
-
 nav {
     background: #333;
 }
-
 nav ul {
     list-style: none;
     display: flex;
     flex-direction: column;
 }
-
 nav ul li {
     border-bottom: 1px solid #555;
 }
-
 nav ul li a {
     display: block;
     padding: 12px;
@@ -44,12 +37,9 @@ nav ul li a {
     color: white;
     text-align: center;
 }
-
 nav ul li a:hover {
     background: #555;
 }
-
-
 .h {
     background: white;
     padding: 20px;
@@ -57,17 +47,14 @@ nav ul li a:hover {
     border-radius: 5px;
     text-align: center;
 }
-
 .h h1 {
     font-size: 22px;
     margin-bottom: 10px;
 }
-
 .h p {
     font-size: 14px;
     color: #555;
 }
-
 /* USING GRID */
 .features {
     display: grid;                 
@@ -75,7 +62,6 @@ nav ul li a:hover {
     gap: 15px;                    
     margin-bottom: 20px;
 }
-
 .box {
     background: white;
     padding: 20px;
@@ -83,39 +69,62 @@ nav ul li a:hover {
     text-align: center;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-
+.box {
+    transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+.box:hover,
+.box:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+    background-color: #ffffff; 
+    cursor: pointer;
+}
+.box:hover {
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.box.overlap:hover {
+    margin-top: -42px; 
+    z-index: 15;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.18);
+}
+@media (max-width: 767px) {
+    .box,
+    .box:hover,
+    .box:focus-visible {
+        transform: none;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        cursor: default;
+    }
+    .box.overlap:hover {
+        margin-top: 0;
+        z-index: auto;
+    }
+}
 /* TABLET */
 @media (min-width: 768px) {
     nav ul {
         flex-direction: row;
         justify-content: center;
     }
-
     nav ul li {
         border-bottom: none;
         border-right: 1px solid #555;
     }
-
     nav ul li:last-child {
         border-right: none;
     }
-
     .h h1 {
         font-size: 28px;
     }
-
-    
     .features {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 /* LARGE DESKTOP  */
 @media (min-width: 1024px) {
     .h h1 {
         font-size: 32px;
     }
-
     .h p {
         font-size: 16px;
     }
