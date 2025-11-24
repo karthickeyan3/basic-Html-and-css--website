@@ -57,10 +57,12 @@ nav ul li a:hover {
 }
 /* USING GRID */
 .features {
-   display:grid;
-   grid-template-columns: 100px 100px 100px ;
-   grid-template-rows: 100px 100px 100px;
-   row-gap: 10px;
+     display: grid;
+     
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: 15px; 
+     margin-bottom: 20px;
+     align-items: start; 
 }
 .box {
     background: rgb(123, 164, 230);
